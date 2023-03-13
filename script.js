@@ -8,7 +8,7 @@ let previousNavID = ""
 for (i=0; i < splashNavigation.length; i++) {
     splashNavigation[i].addEventListener("mouseenter", splashMouseEnter);
     splashNavigation[i].addEventListener("mouseleave", splashMouseLeave);
-    splashNavigation[i].addEventListener("click", splashClick);
+    splashNavigation[i].addEventListener("click", navBarClick);
 }
 function splashMouseEnter() {
     let splashNavHover = this.firstElementChild;
@@ -18,22 +18,23 @@ function splashMouseLeave() {
     let splashNavHover = this.firstElementChild;
     splashNavHover.classList.toggle("hidden");
 }
-function splashClick() {
-    splashContainer.dataset.navbar = "true";
-    body.dataset.navbar = "true";
-    myPortfolio.classList.toggle("hidden");
-    mainContent.classList.remove("hidden");
-    //mainContent.classList.toggle("hidden");
-    for (i=0; i < splashNavigation.length; i++) {
-        /* remove splashscreen events and initialise navbar events */
-        document.getElementById(String("splashnav" + (i))).removeAttribute("class", "hidden"); //cant get this to work with classlist so have to do weird string instead
-        splashNavigation[i].removeEventListener("mouseenter", splashMouseEnter, false);
-        splashNavigation[i].removeEventListener("mouseleave", splashMouseLeave, false);
-        splashNavigation[i].removeEventListener("click", splashClick, false);
-        splashNavigation[i].addEventListener("click", navBarClick);
-    }
-} 
+
 function navBarClick() {
+    /* if splash screen showing then swap to mainpage */
+    if (body.dataset.navbar == "false") {       //checks if splashscreen is showing
+        splashContainer.dataset.navbar = "true";
+        body.dataset.navbar = "true";
+    
+        myPortfolio.classList.toggle("hidden");
+        mainContent.classList.remove("hidden");
+        //mainContent.classList.toggle("hidden");
+        for (i=0; i < splashNavigation.length; i++) {
+            /* remove splashscreen events and initialise navbar events */
+            document.getElementById(String("splashnav" + (i))).removeAttribute("class", "hidden"); //cant get this to work with classlist so have to do weird string instead
+            splashNavigation[i].removeEventListener("mouseenter", splashMouseEnter, false);
+            splashNavigation[i].removeEventListener("mouseleave", splashMouseLeave, false);
+        }
+    } 
     if(this.id === "splashscreen"){
         location.reload();  //refreshes page to reset back to splashscreen seems much easier than manually resetting
         return;
