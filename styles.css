@@ -1,6 +1,12 @@
 :root {
   --grheight: 12.5%;
-  --grwidth: 7.69%
+  --grwidth: 7.69%;
+  --grcolour1: #23f0c7;
+  --grcolour2: #ef767a;
+  --grcolour3: #214e34;
+  --grcolour4: #ffffff;
+  --grcolour5: #ffe347;
+  --grcolour6: #6457a6;
 }
 
 * {
@@ -10,7 +16,7 @@
   }
 .maintext {
     font-size: 1.5vw;
-    color: azure;
+    color: black;
 }
 html {
     scroll-behavior: smooth;
@@ -24,6 +30,9 @@ html {
   width: 100vw;
   margin: 0px;
 }
+.whywebdev {
+  color: var(--grcolour4);
+}
 .bodytest[data-navbar="true"] {
   background-color: black;
   overflow: hidden;
@@ -33,6 +42,22 @@ html {
   margin: 0px;
   position: sticky;
 }
+.bodytestintro[data-navbar="true"] {
+  background-color: var(--grcolour1);
+}
+.bodytestaboutme[data-navbar="true"] {
+  background-color: var(--grcolour2);
+}
+.bodytestwhywebdev[data-navbar="true"] {
+  background-color: var(--grcolour3);
+}
+.bodytestprojects[data-navbar="true"] {
+  background-color: var(--grcolour4);
+}
+.bodytestcontactme[data-navbar="true"] {
+  background-color: var(--grcolour5);
+}
+
 .splashcontainer[data-navbar="false"] {
   aspect-ratio: 1.625;
   width: 90vw;
@@ -90,39 +115,41 @@ html {
   display: grid;
   place-items: center;
 }
-.splashcontainer[data-navbar="false"] > .splashnav {
-  font-size: 100vw;
+/* .splashnav {
+  font-size: 2vw;
   color: orange;
   z-index: 3;
   width: 100vw;
   word-wrap: break-word;
   word-break: break-all;
 }
-.splashcontainer[data-navbar="true"] > .splashnav {
+ .splashnav {
   font-size: 3vw;
   z-index: 3;
   word-wrap: break-word;
   word-break: break-all;
   max-width: 100%;
-}
+} */
 /* set colour of all navbar shapes */
 .splashcontainer > .shape:nth-child(1){
-  background-color: #23f0c7;
+  background-color: var(--grcolour1);
 }
 .splashcontainer > .shape:nth-child(2){
-  background-color: #ef767a;
+  background-color: var(--grcolour2);  
 }
 .splashcontainer > .shape:nth-child(3){
-  background-color: #214e34;
+  background-color: var(--grcolour3);
+  border-color: white;
+  color: white;  
 }
 .splashcontainer > .shape:nth-child(4){
-  background-color: white;
+  background-color: var(--grcolour4);  
 }
 .splashcontainer > .shape:nth-child(5){
-  background-color: #ffe347;  
+  background-color: var(--grcolour5);  
 }
 .splashcontainer > .shape:nth-child(6){
-  background-color: #6457a6;
+  background-color: var(--grcolour6);  
 }
 /* set colour of all splashscreen shapes and prepare for preset positions */
 .splashcontainer[data-navbar="false"] > .shape:nth-child(1){
