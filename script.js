@@ -35,23 +35,25 @@ function splashClick() {
 } 
 function navBarClick() {
     if(this.id === "splashscreen"){
-        location.reload();
+        location.reload();  //refreshes page to reset back to splashscreen seems much easier than manually resetting
+        return;
     }
+    /* Reset content before showing new tab */
     else if (previousNavID !== "") {
-        document.getElementById(previousNavID).classList.toggle("hidden");
-        /* let contentHandler = document.getElementById(String(this.id + "content"));
-        contentHandler.classList.toggle("hidden");
-        console.log(contentHandler.id);
-        previousNavID = contentHandler.id; */
+        document.getElementById(String(previousNavID+"content")).classList.toggle("hidden");
+        body.classList.toggle(String("bodytest"+previousNavID)); 
+        document.getElementById(previousNavID).style.borderStyle = "none";
     }
+    /* show current navbar selections content */
     let contentHandler = document.getElementById(String(this.id + "content"));
-        contentHandler.classList.toggle("hidden");
-        console.log(contentHandler.id);
-        previousNavID = contentHandler.id;
+    contentHandler.classList.toggle("hidden");
+    body.classList.toggle(String("bodytest"+this.id));
+    this.style.borderStyle = "solid";
+    console.log(contentHandler.id);
+    previousNavID = this.id;
 }
 /* Shift splash page between preset configurations on three second intervals*/
-/* setInterval((event) => {
+setInterval((event) => {
     let random = Math.floor(Math.random() * 5);
     splashContainer.dataset.positioning = random; //asign preset configuration
   }, 3500);
- */
