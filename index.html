@@ -6,17 +6,29 @@
         <link href="styles.css" rel="stylesheet">
         <title>About me webpage for Founders and Coders</title>
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-        
+        <script src="script.js" defer></script>
     </head>
     
-    <body>
-        <nav class="splashcontainer splash" id="splashcontainer" data-positioning="5">
-            <div class="shape splash" id="shape1"></div>
-            <div class="shape splash" id="shape2"></div>
-            <div class="shape splash" id="shape3"></div>
-            <div class="shape splash" id="shape4"></div>
-            <div class="shape splash" id="shape5"></div>
-            <div class="shape splash" id="shape6"></div>
+    <body class="bodytest" data-navbar="false" id="body">
+        <nav class="splashcontainer splash" id="splashcontainer" data-positioning="5" data-navbar="false">
+            <div class="shape splash intro" id="intro">
+                <P class="splashnav splash hidden" id="splashnav0">Intro</P>
+            </div>
+            <div class="shape splash aboutme" id="aboutme">
+                <P class="splashnav splash hidden" id="splashnav1">About me</P>
+            </div>
+            <div class="shape splash whywebdev" id="whywebdev">
+                <P class="splashnav splash hidden" id="splashnav2">Why WebDev</P>
+            </div>
+            <div class="shape splash projects" id="projects">
+                <P class="splashnav splash hidden" id="splashnav3">Projects</P>
+            </div>
+            <div class="shape splash contactme" id="contactme">
+                <P class="splashnav splash hidden" id="splashnav4">Contact Me</P>
+            </div>
+            <div class="shape splash backtosplash" id="splashscreen">
+                <P class="splashnav splash hidden" id="splashnav5">Splash screen</P>
+            </div>
             <div id="splashtextcontainer" class="splash">
                 <p class="splashtext splash" id="splashtext1">James</p>
                 <p class="splashtext splash" id="splashtext2">Sandford</p>
@@ -24,33 +36,38 @@
                 <p class="splashtext splash" id="splashtext4">Portfolio</p>
             </div>
         </nav>
-        <script src="script.js"></script>
         <main>
-        
-        <header>
-            Webpage for F&C
-        </header>
-            <div id="aboutme" class="">
-                <p>
-                    Hi there, I'm James I'm <span id="myage">29</span> I was born and raised in London. I loved growing up in such a diverse place full of life with something intresting round every corner!
-                    I studied Electrical and Electronic engineering at Plymouth university. I really enjoyed the more coding focused aspects of the course and late nights with a big group of us crowded
-                     round a library table bouncing ideas off of each other. Unfortunately my enjoyment for those parts of the course were far outweighed by how much I hated the more physics heavy aspects
-                      which led to me dropping out after my second year. I briefly moved to Montpellier in the south of France and then returned to London where I've been since. For the last 7 years I've 
-                      been working as a bicycle mechanic in north London.                 
-                </p>
-            </div>
-            <div id="whywebdev">
-                <p>In a weird way I think there's quite a lot of overlap between my current job and being a web developer. Most of my day is spent tracking down faults on bikes, working out how to fix them
-                    and then implementing the fix. Standards in cycling change needlesly frequently so I'm very used to tracking down technical documents and write ups for specific parts to make sure I understand 
-                    how they work and what compatability issues there might be. My role is also customer facing so I'm fairly comfortable explaining complicated jargon laden problems to people with little 
-                    knowledge of the subject. Over the last seven years some of my absolute favourite times have been sharing my knowledge with new apprentices or regular customers with time to kill. I'm 
-                    hoping that becoming a web developer will let me continue doing the parts of my job I love the most whilst getting to learn new a whole new skill set and being a bit less taxing on my body.
-                </p>
-            </div>
-            <div id="learnings">
-                <p>I've really enjoyed working through the prerequisets for the course. It's been incredibly intresting seeing what happens behind the scenes, I've found myself opening the developer tools on 
-                    firefox on pretty much every new website I visit trying to see how a certain feature was implemented. It's also been very eye opening finding out how much thought goes in to making the web
-                     accessible for everyone, it's not something I'd ever really thought about before and I really appreciate getting this new perspective on the web.</p>
+            <div class="hidden maincontentcontainer" id="maincontent">
+                <div class="intro maintext hidden" id="introcontent">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum ducimus doloremque ratione veritatis earum dolore repellat mollitia possimus dignissimos tempora?</p>
+                </div>
+                <div class="aboutme maintext hidden" id="aboutmecontent">
+                    <p>
+                        Hi there, I'm James I'm <span id="myage">29</span> I was born and raised in London. I loved growing up in such a diverse place full of life with something intresting round every corner!
+                        I studied Electrical and Electronic engineering at Plymouth university. I really enjoyed the more coding focused aspects of the course and late nights with a big group of us crowded
+                         round a library table bouncing ideas off of each other. Unfortunately my enjoyment for those parts of the course were far outweighed by how much I hated the more physics heavy aspects
+                          which led to me dropping out after my second year. I briefly moved to Montpellier in the south of France and then returned to London where I've been since. For the last 7 years I've
+                          been working as a bicycle mechanic in north London.
+                    </p>
+                </div>
+                <div class="whywebdev maintext hidden" id="whywebdevcontent">
+                    <p>In a weird way I think there's quite a lot of overlap between my current job and being a web developer. Most of my day is spent tracking down faults on bikes, working out how to fix them
+                        and then implementing the fix. Standards in cycling change needlesly frequently so I'm very used to tracking down technical documents and write ups for specific parts to make sure I understand
+                        how they work and what compatability issues there might be. My role is also customer facing so I'm fairly comfortable explaining complicated jargon laden problems to people with little
+                        knowledge of the subject. Over the last seven years some of my absolute favourite times have been sharing my knowledge with new apprentices or regular customers with time to kill. I'm
+                        hoping that becoming a web developer will let me continue doing the parts of my job I love the most whilst getting to learn new a whole new skill set and being a bit less taxing on my body.
+                    </p>
+                    <p>I've really enjoyed working through the prerequisets for the course. It's been incredibly intresting seeing what happens behind the scenes, I've found myself opening the developer tools on
+                        firefox on pretty much every new website I visit trying to see how a certain feature was implemented. It's also been very eye opening finding out how much thought goes in to making the web
+                         accessible for everyone, it's not something I'd ever really thought about before and I really appreciate getting this new perspective on the web.</p>
+                </div>
+                <div class="projects maintext hidden" id="projectscontent">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, corporis quam, soluta officia a dolore quidem eaque culpa quia officiis vel, reprehenderit iure. Perferendis ipsam atque voluptates, nisi quibusdam labore!</p>
+                </div>
+                <div class="contactme maintext hidden" id="contactmecontent">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus eveniet repellendus aut suscipit officia odit nemo, blanditiis qui architecto omnis porro doloremque tenetur possimus quis. Quae commodi asperiores veniam officia.</p>
+                </div>
+                </div>
             </div>
         </main>
         <footer>
