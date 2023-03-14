@@ -18,6 +18,10 @@
     font-size: 1.5vw;
     color: black;
 }
+button {
+  border: none;
+  cursor: pointer;
+}
 html {
     scroll-behavior: smooth;
 }
