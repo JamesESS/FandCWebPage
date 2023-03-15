@@ -6,9 +6,14 @@ const mainContent = document.getElementById("maincontent");
 let previousNavID = ""
 /* Make each splash screen shape display text on hover and move past splashscreen on click */
 for (i=0; i < splashNavigation.length; i++) {
+    
+
     splashNavigation[i].addEventListener("mouseenter", splashMouseEnter);
     splashNavigation[i].addEventListener("mouseleave", splashMouseLeave);
-    splashNavigation[i].addEventListener("click", navBarClick);
+    splashNavigation[i].addEventListener("click", navBarClick);  
+    
+    /* splashNavigation[i].style.animation = "splashshapehover 1000ms";
+    splashNavigation[i].style.animationDelay = 200*i+"ms"; */
 }
 function splashMouseEnter() {
     let splashNavHover = this.firstElementChild;
@@ -21,7 +26,11 @@ function splashMouseLeave() {
 
 function navBarClick() {
     /* if splash screen showing then swap to mainpage */
-    if (body.dataset.navbar == "false") {       //checks if splashscreen is showing
+    if(this.id === "splashscreen" && body.dataset.navbar == "false"){
+        //exit out of function of splashscreen button is pressed whilst on splashscreen
+        return;
+    }
+    else if (body.dataset.navbar == "false") {       //checks if splashscreen is showing
         splashContainer.dataset.navbar = "true";
         body.dataset.navbar = "true";
     
@@ -39,15 +48,16 @@ function navBarClick() {
         location.reload();  //refreshes page to reset back to splashscreen seems much easier than manually resetting
         return;
     }
+    
     /* Reset content before showing new tab */
     else if (previousNavID !== "") {
-        document.getElementById(String(previousNavID+"content")).classList.toggle("hidden");
+        document.getElementById(String(previousNavID+"content")).dataset.visible = "false";
         body.classList.toggle(String("bodytest"+previousNavID)); 
         document.getElementById(previousNavID).style.borderStyle = "none";
     }
     /* show current navbar selections content */
     let contentHandler = document.getElementById(String(this.id + "content"));
-    contentHandler.classList.toggle("hidden");
+    contentHandler.dataset.visible = "true";
     body.classList.toggle(String("bodytest"+this.id));
     this.style.borderStyle = "solid";
     console.log(contentHandler.id);
