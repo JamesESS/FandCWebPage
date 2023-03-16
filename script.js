@@ -62,7 +62,7 @@ function navBarClick() {
     this.style.borderStyle = "solid";
     console.log(contentHandler.id);
     previousNavID = this.id;
-    if(this.id == "projects") {
+    if(this.id == "projects" && previousProjectID == "") {
         document.getElementById("project1img").classList.remove("hidden");
         document.getElementById("project1text").classList.remove("hidden");
     } 
