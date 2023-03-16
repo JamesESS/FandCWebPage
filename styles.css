@@ -45,6 +45,7 @@ html {
   width: 100vw;
   margin: 0px;
   position: sticky;
+  grid-auto-rows: max-content;
 }
 .bodytestintro[data-navbar="true"] {
   background-color: var(--grcolour1);
@@ -79,17 +80,36 @@ html {
   grid-template-areas: "a a a a a a";
   align-content: center;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 2fr));
+  grid-auto-columns: repeat(auto-fit, minmax(240px, 2fr));
   transition: left, top, height, width;
   transition-duration: 1000ms;
   transition-timing-function: ease-out;
 }
 .splashcontainer[data-navbar="true"] > .shape{
   width: 100%;
+
   height: 8vh;
   display: grid;
   place-items: center;
 }
+/* .splashcontainer[data-navbar="true"] > .shape:nth-child(1){
+  grid-area: a;
+}
+.splashcontainer[data-navbar="true"] > .shape:nth-child(2){
+  grid-area: b;
+}
+.splashcontainer[data-navbar="true"] > .shape:nth-child(3){
+  grid-area: c;
+}
+.splashcontainer[data-navbar="true"] > .shape:nth-child(4){
+  grid-area: d;
+}
+.splashcontainer[data-navbar="true"] > .shape:nth-child(5){
+  grid-area: e;
+}
+.splashcontainer[data-navbar="true"] > .shape:nth-child(6){
+  grid-area: f;
+} */
 .splashtext {
   position: absolute;
   z-index: 2;
