@@ -3,18 +3,18 @@ const splashNavigation = document.getElementsByClassName("shape");
 const body = document.getElementById("body");
 const myPortfolio = document.getElementById("splashtextcontainer");
 const mainContent = document.getElementById("maincontent");
-let previousNavID = ""
+const projectButton = document.getElementsByClassName("projectbutton");
+let previousNavID = "";
+let previousProjectID = "";
 /* Make each splash screen shape display text on hover and move past splashscreen on click */
 for (i=0; i < splashNavigation.length; i++) {
-    
-
     splashNavigation[i].addEventListener("mouseenter", splashMouseEnter);
     splashNavigation[i].addEventListener("mouseleave", splashMouseLeave);
     splashNavigation[i].addEventListener("click", navBarClick);  
-    
     /* splashNavigation[i].style.animation = "splashshapehover 1000ms";
     splashNavigation[i].style.animationDelay = 200*i+"ms"; */
 }
+
 function splashMouseEnter() {
     let splashNavHover = this.firstElementChild;
     splashNavHover.classList.toggle("hidden");
@@ -62,7 +62,47 @@ function navBarClick() {
     this.style.borderStyle = "solid";
     console.log(contentHandler.id);
     previousNavID = this.id;
+    if(this.id == "projects") {
+        document.getElementById("project1img").classList.remove("hidden");
+        document.getElementById("project1text").classList.remove("hidden");
+    } 
 }
+/* initialise hover and click functionality for project buttons */
+for (i=0; i < projectButton.length; i++) {
+    projectButton[i].addEventListener("mouseenter", projectButtonMouseEnter);
+    projectButton[i].addEventListener("click", projectButtonClick); 
+}
+/* project button hover function */
+function projectButtonMouseEnter() {
+    /* exits out of function if project that's already displayed is hovered over */
+    if (previousProjectID == "" && this.id == "project1" || previousProjectID == this.id){
+        console.log("exit func")
+        return;
+    }
+    /* hides previous project */
+    if (previousProjectID == "") {
+        document.getElementById("project1img").classList.toggle("hidden");
+        document.getElementById("project1text").classList.toggle("hidden");
+        document.getElementById("project1").style.opacity = 0.5;
+    }
+    else if (previousProjectID !== "") {
+        console.log("previous = this");
+        document.getElementById(String(previousProjectID + "img")).classList.toggle("hidden");
+        document.getElementById(String(previousProjectID + "text")).classList.toggle("hidden");
+        document.getElementById(previousProjectID).style.opacity = 0.5;
+    }
+    /* shows project mouse is hovering over */
+    console.log("mouse enter" + this.id);
+    document.getElementById(String(this.id + "img")).classList.toggle("hidden");
+    document.getElementById(String(this.id + "text")).classList.toggle("hidden");
+    this.style.opacity = 1;  //make it clear which button is active
+    console.log("this id " + this.id + "previous id " + previousProjectID);
+    previousProjectID = this.id; 
+}
+function projectButtonClick() {
+    console.log("click" + this.id);
+}
+
 /* Shift splash page between preset configurations on three second intervals*/
 setInterval((event) => {
     let random = Math.floor(Math.random() * 5);

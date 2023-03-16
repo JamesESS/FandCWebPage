@@ -79,7 +79,7 @@ html {
   grid-template-areas: "a a a a a a";
   align-content: center;
   gap: 1rem;
-  grid-template-columns: repeat(auto, minmax(240px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 2fr));
   transition: left, top, height, width;
   transition-duration: 1000ms;
   transition-timing-function: ease-out;
@@ -420,7 +420,8 @@ height: calc(5*var(--grheight));
 }
 
 #projectscontent[data-visible="true"] {
-  width: 100vw;    
+  width: 100vw;
+  height: 90vh;    
   display: grid;
   grid-template-areas: 
   'header header . .'
@@ -439,9 +440,10 @@ height: calc(5*var(--grheight));
   '. projecttext projecttext projecttext'
   '. . footer footer'
   ;
-  grid-auto-rows: 1fr;
+  grid-auto-rows: 6vh;
   grid-auto-columns: 22vw;
-  gap: 2vw;
+  gap: 20px;
+  justify-content: center;
 }
 
 .project0 {
@@ -450,18 +452,38 @@ height: calc(5*var(--grheight));
 
 .project1head {
   grid-area: project1;
+  background-color: var(--grcolour1);
+  color: black;
+  font-size: 2.5vw;
+  opacity: 1;
 }
 .project2head {
   grid-area: project2;
+  background-color: var(--grcolour2);
+  color: black;
+  font-size: 2.5vw;
+  opacity: 0.5;
 }
 .project3head {
   grid-area: project3;
+  background-color: var(--grcolour3);
+  color: white;
+  font-size: 2.5vw;
+  opacity: 0.5;
 }
 .project4head {
   grid-area: project4;
+  background-color: var(--grcolour5);
+  color: black;
+  font-size: 2.5vw;
+  opacity: 0.5;
 }
 .project5head {
   grid-area: project5;
+  background-color: var(--grcolour6);
+  color: black;
+  font-size: 2.5vw;
+  opacity: 0.5;
 }
 .projectimagecontainer {
   grid-area: screenshot;
