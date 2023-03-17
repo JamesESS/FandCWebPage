@@ -4,8 +4,27 @@ const body = document.getElementById("body");
 const myPortfolio = document.getElementById("splashtextcontainer");
 const mainContent = document.getElementById("maincontent");
 const projectButton = document.getElementsByClassName("projectbutton");
+const contactMe = document.getElementById("contactmeform");
+const contactForm = document.getElementsByClassName("form");
+
+/* variable to track state of different buttons */
 let previousNavID = "";
 let previousProjectID = "";
+
+/* variables needed for contact form and contact form event listener */
+let contactObject = {
+    firstName: "",
+    lastName: "",
+    number: "",
+    email: "",
+    about: "",
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+let contactArray = Object.keys(contactObject);
+contactMe.addEventListener("submit", contactMeSubmit, false);
+
 /* Make each splash screen shape display text on hover and move past splashscreen on click */
 for (i=0; i < splashNavigation.length; i++) {
     splashNavigation[i].addEventListener("mouseenter", splashMouseEnter);
@@ -100,9 +119,16 @@ function projectButtonMouseEnter() {
     previousProjectID = this.id; 
 }
 function projectButtonClick() {
-    console.log("click" + this.id);
+    
 }
-
+function contactMeSubmit(Event) {
+    Event.preventDefault();
+    console.log(contactForm[1].value);
+    for (i=0; i < contactArray.length - 1; i++) {
+        contactObject[contactArray[i]] = contactForm[i].value;
+    }
+    alert("Thanks " + contactObject.fullName() + " for getting in touch.\nI'll get back to you shortly!");
+}
 /* Shift splash page between preset configurations on three second intervals*/
 setInterval((event) => {
     let random = Math.floor(Math.random() * 5);
