@@ -84,6 +84,8 @@ html {
   transition: left, top, height, width;
   transition-duration: 1000ms;
   transition-timing-function: ease-out;
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 .splashcontainer[data-navbar="true"] > .shape{
   width: 100%;
