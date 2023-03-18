@@ -409,10 +409,11 @@ height: calc(5*var(--grheight));
   padding-top: 12vh;
   padding-left: 1vw;
   padding-right: 1vw;
-  grid-auto-rows: 20vh;
+  grid-auto-rows: min-content;
   grid-auto-columns: 1fr;
   gap: 20px;
   grid-template-areas: 
+  'header header . .'
   'text . image image'
   'text . image image'
   'text . image image'
