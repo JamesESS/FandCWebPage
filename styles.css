@@ -70,6 +70,7 @@ html {
   max-width: 100vw;
   position: relative;
 }
+/* Style for navigation bar */
 .splashcontainer[data-navbar="true"] {
   height: 10vh;
   width: 100vw;
@@ -77,10 +78,9 @@ html {
   max-width: 100%;
   position: fixed;
   display: grid;
-  grid-template-areas: "a a a a a a";
+  grid-template-areas: "a a a a a a"; /* Need template area to stop hidden element taking up space */
   align-content: center;
   gap: 1rem;
-  /* grid-auto-columns: repeat(auto-fit, minmax(240px, 2fr)); */
   transition: left, top, height, width;
   transition-duration: 1000ms;
   transition-timing-function: ease-out;
@@ -444,11 +444,11 @@ height: calc(5*var(--grheight));
   padding-left: 1vw;
   padding-right: 1vw;
   grid-gap: 1vw;
+  grid-template-rows: min-content;
   grid-template-areas: 
-  'header1 . . header2'
-  '. . . .'
-  'maintext . . subtext'
-  'maintext . . subtext'
+  'header1 . header2'
+  'maintext . subtext'
+  'maintext . subtext'
   ;
   background-color: var(--grcolour3);
 }
@@ -589,4 +589,81 @@ input[type=number] {
 }
 #instacontact {
   grid-area: insta;
+}
+/* Phone stylings */
+@media screen and (max-device-width: 640px){
+  .header {
+    font-size: 3rem;
+  }
+  .text {
+    font-size: 1.3rem;
+  }
+  #aboutmecontent[data-visible="true"] {
+    display: grid;
+    width: 100vw;
+    height: 100vh; 
+    padding-top: 12vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    grid-auto-rows: min-content;
+    grid-auto-columns: 1fr;
+    gap: 20px;
+    grid-template-areas: 
+    'header'
+    'text'
+    'image'
+    ;
+    background-color: var(--grcolour2);
+  }
+  .aboutmeheader {
+    grid-area: header;
+  }
+  .abouttext {
+    grid-area: text;
+  }
+  #meslideshow {
+    grid-area: image;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    height: 80vh;
+    width: clamp(200px, 100%, 80vw);
+    scrollbar-color: black var(--grcolour2);
+    padding-left: 15%;
+  }
+  .aboutmeimg {
+    object-fit: contain;
+    width: 100%;
+    scroll-snap-align: center;
+  }
+
+  #whywebdevcontent[data-visible="true"] {
+    display: grid;
+    width: 100vw;
+    height: 100vh; 
+    padding-top: 12vh; 
+    padding-left: 1vw;
+    padding-right: 1vw;
+    grid-gap: 1vw; 
+    grid-template: 
+    '. header1 .' 
+    '. maintext .'
+    '. header2 .'
+    '. subtext .'
+    ;
+    background-color: var(--grcolour3);
+  }
+  .whyweb0 {
+    grid-area: header1;
+    text-align: center;
+  }
+  .whyfac {
+    grid-area: header2;
+  }
+  .whyweb1 {
+    grid-area: maintext;
+  }
+  .whyweb2 {
+    grid-area: subtext;
+  }
 }
