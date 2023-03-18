@@ -539,6 +539,7 @@ height: calc(5*var(--grheight));
 .projectimagecontainer {
   grid-area: screenshot;
   width: 100%;
+  border: solid;
 }
 .projectimage {
   object-fit: contain;
@@ -740,6 +741,7 @@ input[type=number] {
   .projectimagecontainer {
     grid-area: screenshot;
     width: 100%;
+    height: fit-content;
   }
   .projectimage {
     object-fit: contain;
