@@ -633,6 +633,7 @@ input[type=number] {
     width: clamp(200px, 100%, 80vw);
     scrollbar-color: black var(--grcolour2);
     padding-left: 15%;
+    padding-bottom: 10vh;
   }
   .aboutmeimg {
     /* width: clamp(200px, 100%, 80vw); */
@@ -751,4 +752,47 @@ input[type=number] {
   .projectfooter {
     grid-area: footer;
   }
+  #contactmecontent[data-visible="true"] {
+    width: 100vw;
+    height: 100vh; 
+    padding-top: 12vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    display: grid;
+    gap: 1vw;
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr;
+   
+    grid-template-areas: 
+    'contactform contactform contactform'
+    'linkedin insta github';
+    background-color: var(--grcolour5);
+  }
+  #contactmeform {
+    grid-area: contactform;
+    padding-left: 15%;
+  }
+  .form {
+    width: 80%;
+  }
+  input[type=number] {
+    appearance: textfield;
+  }
+  #subject {
+    width: 80%;
+    height: 50%
+  }
+  #linkedcontact {
+    grid-area: linkedin;
+  }
+  #githubcontact {
+    grid-area: github;
+  }
+  #instacontact {
+    grid-area: insta;
+  }
+  .contactfoot {
+    padding-top: 40vh;
+  }
 }
+

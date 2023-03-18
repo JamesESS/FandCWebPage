@@ -74,57 +74,56 @@
                          accessible for everyone, it's not something I'd ever really thought about before and I really appreciate getting this new perspective on the web.</p>
                 </div>
                 <div class="projects maintext" id="projectscontent" data-visible="false">
-                    <h1 class="project0">My recent projects</h1>
+                    <h1 class="project0 header">My recent projects</h1>
                     
                         <button class="project1head projectbutton" id="project1">My hobby page</button>
-                        <div class="hidden projectimagecontainer" id="project1img"><img class="project1image projectimage" src="images/moviedata 800by600px.jpg"></div>
-                        <p class="project1text projecttext" id="project1text">For this project I had to build a webpage about a hobby I'm intrested in. The main focus of this page was getting started with Document Object Model (DOM). We had to display an up to date time on our webpage I also decided to add a countdown timer to get some extra experience using JavaScript and DOM. Once I'd managed to get my date displaying correctly I realised it wouldn't update unless I found a way to periodically call the relevant function,.Thankfully I came accross the setInterval() method quite quickly, using this I was able to call my function once every second I didn't know about CSS flex or grid at this point so everything is held in place with padding, I used percentages for my padding hoping it would help improve responsiveness. If I were to build this site again I think I would approach it in a different way. My stylesheet would definetly look quite different!</p>
+                        <div class="hidden projectimagecontainer" id="project1img"><img class="project1image projectimage" src="images/hobbypage 800by600px.jpg"></div>
+                        <p class="project1text projecttext text" id="project1text">For this project I had to build a webpage about a hobby I'm intrested in. The main focus of this page was getting started with Document Object Model (DOM). We had to display an up to date time on our webpage I also decided to add a countdown timer to get some extra experience using JavaScript and DOM. Once I'd managed to get my date displaying correctly I realised it wouldn't update unless I found a way to periodically call the relevant function,.Thankfully I came accross the setInterval() method quite quickly, using this I was able to call my function once every second I didn't know about CSS flex or grid at this point so everything is held in place with padding, I used percentages for my padding hoping it would help improve responsiveness. If I were to build this site again I think I would approach it in a different way. My stylesheet would definetly look quite different!</p>
                     
                         <button class="project2head projectbutton" id="project2">My project gallery</button>
                         <div class="project2image projectimagecontainer hidden" id="project2img"><img class="project2image projectimage" src="images/gallery 800by600px.jpg"></div>
-                        <p class="project2text projecttext hidden" id="project2text">For this project I made a gallery showcasing all the other projects I've done for the FaC prerequisties. This was an introduction to using flex display. One of the main challenges for this project was making sure that the content displayed in a certain way on different display sizes. I used the clamp() function in CSS to help achieve this. Clamp allowed me to set a minimum a maximum and a preffered size for my elements, this meant I was able to scale my elements to match the size of the display. One specific requirement was having my projects show in a single column on mobile devices. With lots of experimentation and pixel measuring I was able to achieve this using the clamp function. I think it would have been better to use a media query allowing me to effectively have a seperate stylesheet for mobile devices.</p>
+                        <p class="project2text projecttext hidden text" id="project2text">For this project I made a gallery showcasing all the other projects I've done for the FaC prerequisties. This was an introduction to using flex display. One of the main challenges for this project was making sure that the content displayed in a certain way on different display sizes. I used the clamp() function in CSS to help achieve this. Clamp allowed me to set a minimum a maximum and a preffered size for my elements, this meant I was able to scale my elements to match the size of the display. One specific requirement was having my projects show in a single column on mobile devices. With lots of experimentation and pixel measuring I was able to achieve this using the clamp function. I think it would have been better to use a media query allowing me to effectively have a seperate stylesheet for mobile devices.</p>
                     
                         <button class="project3head projectbutton" id="project3">Movie database</button>
                         <div class="project3image projectimagecontainer hidden" id="project3img"><img class="project3image projectimage" src="images/moviedata 800by600px.jpg"></div>
-                        <p class="project3text projecttext hidden" id="project3text">This project was used as an introduction to JavaScript objects and how to manipulate them. I was given a small movie database and free reign on what to do with it as long as the user was able to interact with the data in some way. I'd already wanted to make a site that picked a random film to help with option paralysis on various streaming sites so I knew I wanted to have that functionality in my site. This was actually quite easy to implement, although I don't know how well my method would scale. I then wanted a way to see all titles available and finally make it possible to add your own film to the database. All of the functionality in this site relies heavily on the Object.keys() method, this helped me be able to display data about different films dynamically so that everything still worked when a new film was added. This project was very javascript heavy so there was a fair bit of debugging and fault finding along the way. I made constant use of console.log to check if I was actually reaching functions I wanted to and the values of various arrays, objects and other variables along the way. One point I got especcialy stuck on was stopping my form submit from refreshing the page, from lots of googling I managed to get it working the way I wanted, this issue gave me a chance to better understand the way JavaScript event handlers work (there's still a lot more to learn here!).<br>I actually did this project before the project gallery and I think it has suffered for that. I'm very happy with the functionality of the site but visually it leaves a lot to be desired.</p>
+                        <p class="project3text projecttext hidden text" id="project3text">This project was used as an introduction to JavaScript objects and how to manipulate them. I was given a small movie database and free reign on what to do with it as long as the user was able to interact with the data in some way. I'd already wanted to make a site that picked a random film to help with option paralysis on various streaming sites so I knew I wanted to have that functionality in my site. This was actually quite easy to implement, although I don't know how well my method would scale. I then wanted a way to see all titles available and finally make it possible to add your own film to the database. All of the functionality in this site relies heavily on the Object.keys() method, this helped me be able to display data about different films dynamically so that everything still worked when a new film was added. This project was very javascript heavy so there was a fair bit of debugging and fault finding along the way. I made constant use of console.log to check if I was actually reaching functions I wanted to and the values of various arrays, objects and other variables along the way. One point I got especcialy stuck on was stopping my form submit from refreshing the page, from lots of googling I managed to get it working the way I wanted, this issue gave me a chance to better understand the way JavaScript event handlers work (there's still a lot more to learn here!).<br>I actually did this project before the project gallery and I think it has suffered for that. I'm very happy with the functionality of the site but visually it leaves a lot to be desired.</p>
                     
                         <button class="project4head projectbutton" id="project4">My portfolio page</button>
                         <div class="project4image projectimagecontainer hidden" id="project4img"><img class="project4image projectimage" src="images/moviedata 800by600px.jpg"></div>
-                        <p class="project4text projecttext hidden" id="project4text">This project was combining everything I'd learnt from previous projects in to a website about myself and why I'm intrested in web development with Founders and Coders. To start I sketched out some basic layouts for how I might want the site to look. I knew I wanted a splashcreen for my site but couldn't decide what that should look like. I came across a <a href="https://www.youtube.com/watch?v=dhfQnmGXSwU">youtube video</a> by Hyperplexed showcasing a very cool splashscreen and breaking down how they would go about making it. Using this I made my own (admitedly very similar) version this introduced me to the data attribute in HTML and making use of it as a style selector in CSS. I wanted the splashcreen to be interactive so it made sense to have it navigate to a section of the mainsite. Then using data attributes I made it so the splashscreen buttons became my navigation bar, this meant I could keep my eventlisteners from the splashscreen and combine the splashscreen and navigation bar functions in to one.</p>
+                        <p class="project4text projecttext hidden text" id="project4text">This project was combining everything I'd learnt from previous projects in to a website about myself and why I'm intrested in web development with Founders and Coders. To start I sketched out some basic layouts for how I might want the site to look. I knew I wanted a splashcreen for my site but couldn't decide what that should look like. I came across a <a href="https://www.youtube.com/watch?v=dhfQnmGXSwU">youtube video</a> by Hyperplexed showcasing a very cool splashscreen and breaking down how they would go about making it. Using this I made my own (admitedly very similar) version this introduced me to the data attribute in HTML and making use of it as a style selector in CSS. I wanted the splashcreen to be interactive so it made sense to have it navigate to a section of the mainsite. Then using data attributes I made it so the splashscreen buttons became my navigation bar, this meant I could keep my eventlisteners from the splashscreen and combine the splashscreen and navigation bar functions in to one.</p>
                     
                         <button class="project5head projectbutton" id="project5">Game</button>
                         <div class="project5image projectimagecontainer hidden" id="project5img"><img class="project5image projectimage" src="images/moviedata 800by600px.jpg"></div>
-                        <p class="project5text projecttext hidden" id="project5text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae sed odio soluta voluptates alias recusandae magni harum! Non nobis earum animi recusandae itaque eveniet dolores dignissimos placeat eius, nulla hic.</p>
+                        <p class="project5text projecttext hidden text" id="project5text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae sed odio soluta voluptates alias recusandae magni harum! Non nobis earum animi recusandae itaque eveniet dolores dignissimos placeat eius, nulla hic.</p>
         
                 </div>
                 </div>
                 <div class="contactme maintext" id="contactmecontent" data-visible="false">
                     <form method="post" action="" id="contactmeform">
-                        <label for="firstname">First Name</label><br>
+                        <label class="text" for="firstname">First Name</label><br>
                         <input type="text" id="firstname" class="form" placeholder="Your first name..."><br>
 
-                        <label for="surname">Last Name</label><br>
+                        <label class="text" for="surname">Last Name</label><br>
                         <input type="text" id="surname" class="form" placeholder="Your last name..."><br>
 
-                        <label for="number">Number</label><br>
+                        <label class="text" for="number">Number</label><br>
                         <input type="number" minlength="11" id="number" class="form" placeholder="07123321123"><br>
 
-                        <label for="email">Email</label><br>
+                        <label class="text" for="email">Email</label><br>
                         <input type="email" id="email" class="form" placeholder="youremail@email.com"><br>
 
-                        <label for="subject">Subject</label><br>
+                        <label class="text" for="subject">Subject</label><br>
                         <textarea id="subject" class="form" placeholder="Get in touch..."></textarea><br>
                         <input type="submit" value="submit">
                     </form>
-                    <a id="githubcontact" class="contactfoot">Github</a>
-                    <a id="instacontact" class="contactfoot">Instagram</a>
-                    <a id="linkedcontact" class="contactfoot">Linkedin</a>
+                    <a id="githubcontact" class="contactfoot text">Github</a>
+                    <a id="instacontact" class="contactfoot text">Instagram</a>
+                    <a id="linkedcontact" class="contactfoot text">Linkedin</a>
                 </div>
                 </div>
             </div>
         </main>
-        <footer>
-
+        <footer id="mobilecheck">
         </footer>   
     </body>
     </body>
