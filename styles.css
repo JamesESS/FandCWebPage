@@ -434,7 +434,7 @@ height: calc(5*var(--grheight));
 }
 .aboutmeimg {
   object-fit: contain;
-  
+  width: 100%;
   scroll-snap-align: center;
 }
 #whywebdevcontent[data-visible="true"] {
@@ -798,4 +798,3 @@ input[type=number] {
     padding-top: 40vh;
   }
 }
-

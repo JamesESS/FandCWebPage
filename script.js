@@ -6,7 +6,13 @@ const mainContent = document.getElementById("maincontent");
 const projectButton = document.getElementsByClassName("projectbutton");
 const contactMe = document.getElementById("contactmeform");
 const contactForm = document.getElementsByClassName("form");
+const mobileCheck = document.getElementById("mobilecheck");
+const myAge = document.getElementById("myage");
 
+let dateOfBirth =  new Date(1993,03,24);
+let currentTime = new Date()
+let age = Math.floor((currentTime - dateOfBirth) / 31536000000);
+myAge.innerText = age;
 /* variable to track state of different buttons */
 let previousNavID = "";
 let previousProjectID = "";
@@ -21,7 +27,26 @@ let contactObject = {
     fullName: function() {
         return this.firstName + " " + this.lastName;
     }
-};
+}
+
+let mouseHover = false;  //variable to track if mouse hovering over splash element
+let mobileDeviceStatus = false;  //variable to check device width
+/* Checks if user is on mobile device every second*/
+setInterval(mobileDevice, 1000)
+function mobileDevice() {
+    if (getComputedStyle(mobileCheck).display == "none") {    //checks display style of an element in css mobile device media query
+        for (i=0; i < splashNavigation.length; i++) {
+            splashNavigation[i].firstElementChild.classList.remove("hidden");
+            mobileDeviceStatus = true;
+        }
+    }
+    else if (getComputedStyle(mobileCheck).display == "block" && body.dataset.navbar == "false" && !mouseHover){  //hides splashscreen text when not on mobile and not currently hovering over an element
+        for (i=0; i < splashNavigation.length; i++) {
+            splashNavigation[i].firstElementChild.classList.add("hidden");
+            mobileDeviceStatus = false;
+        }
+    }
+}
 let contactArray = Object.keys(contactObject);
 contactMe.addEventListener("submit", contactMeSubmit, false);
 
@@ -35,10 +60,18 @@ for (i=0; i < splashNavigation.length; i++) {
 }
 
 function splashMouseEnter() {
+    if (mobileDeviceStatus){
+        return;
+    }
+    mouseHover = true;
     let splashNavHover = this.firstElementChild;
     splashNavHover.classList.toggle("hidden");
 }
 function splashMouseLeave() {
+    if (mobileDeviceStatus){
+        return;
+    } 
+    mouseHover = false;
     let splashNavHover = this.firstElementChild;
     splashNavHover.classList.toggle("hidden");
 }
