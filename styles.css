@@ -563,7 +563,7 @@ height: calc(5*var(--grheight));
   gap: 1vw;
   grid-auto-rows: 1fr;
   grid-auto-columns: 1fr;
- 
+  
   grid-template-areas: 
   '. contactform contactform'
   '. . .'
