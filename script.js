@@ -9,9 +9,7 @@ const contactForm = document.getElementsByClassName("form");
 const mobileCheck = document.getElementById("mobilecheck");
 const myAge = document.getElementById("myage");
 
-let dateOfBirth =  new Date(1993,03,24);
-let currentTime = new Date()
-let age = Math.floor((currentTime - dateOfBirth) / 31536000000);
+let age = Math.floor((new Date()- new Date(1993,03,24)) / 31536000000);
 myAge.innerText = age;
 /* variable to track state of different buttons */
 let previousNavID = "";
@@ -32,7 +30,7 @@ let contactObject = {
 let mouseHover = false;  //variable to track if mouse hovering over splash element
 let mobileDeviceStatus = false;  //variable to check device width
 /* Checks if user is on mobile device every second*/
-setInterval(mobileDevice, 1000)
+setInterval(mobileDevice, 600)
 function mobileDevice() {
     if (getComputedStyle(mobileCheck).display == "none") {    //checks display style of an element in css mobile device media query
         for (i=0; i < splashNavigation.length; i++) {
@@ -60,20 +58,22 @@ for (i=0; i < splashNavigation.length; i++) {
 }
 
 function splashMouseEnter() {
-    if (mobileDeviceStatus){
+   /*  if (mobileDeviceStatus){
         return;
-    }
+    } */
     mouseHover = true;
     let splashNavHover = this.firstElementChild;
+    if (getComputedStyle(splashNavHover).display == "none" && !mobileDeviceStatus){
     splashNavHover.classList.toggle("hidden");
+    }
 }
 function splashMouseLeave() {
-    if (mobileDeviceStatus){
-        return;
-    } 
     mouseHover = false;
     let splashNavHover = this.firstElementChild;
-    splashNavHover.classList.toggle("hidden");
+    console.log(getComputedStyle(splashNavHover).display);
+    if (getComputedStyle(splashNavHover).display == "block" && !mobileDeviceStatus){
+        splashNavHover.classList.toggle("hidden");
+    }
 }
 
 function navBarClick() {
