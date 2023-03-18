@@ -590,8 +590,11 @@ input[type=number] {
 #instacontact {
   grid-area: insta;
 }
-/* Phone stylings */
+/* --------------------------------------------------Phone stylings-------------------------------------------------- */
 @media screen and (max-device-width: 640px){
+  #mobilecheck{
+    display: none;
+  }
   .header {
     font-size: 3rem;
   }
@@ -637,7 +640,7 @@ input[type=number] {
     width: 100%;
     scroll-snap-align: center;
   }
-
+  /* why web dev page styling */
   #whywebdevcontent[data-visible="true"] {
     display: grid;
     width: 100vw;
@@ -666,5 +669,86 @@ input[type=number] {
   }
   .whyweb2 {
     grid-area: subtext;
+  }
+  /* project page styling */
+  #projectscontent[data-visible="true"] {
+    width: 100vw;
+    height: 100vh; 
+    padding-top: 12vh;
+    padding-left: 1vw;
+    padding-right: 1vw;    
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-areas: 
+    'header header header header'
+    'project1 screenshot screenshot screenshot'
+    'project2 screenshot screenshot screenshot'
+    'project3 screenshot screenshot screenshot'
+    'project4 screenshot screenshot screenshot'
+    'project5 projecttext projecttext projecttext'
+    '. projecttext projecttext projecttext'
+    '. . footer footer'
+    ;
+    grid-auto-rows: 6vh;
+    grid-auto-columns: 22vw;
+    gap: 20px;
+    justify-content: center;
+    background-color: var(--grcolour4);
+  }
+  
+  .project0 {
+    grid-area: header;
+  }
+  
+  .project1head {
+    grid-area: project1;
+    background-color: var(--grcolour1);
+    color: black;
+    font-size: 2.5vw;
+    opacity: 1;
+  }
+  .project2head {
+    grid-area: project2;
+    background-color: var(--grcolour2);
+    color: black;
+    font-size: 2.5vw;
+    opacity: 0.5;
+  }
+  .project3head {
+    grid-area: project3;
+    background-color: var(--grcolour3);
+    color: white;
+    font-size: 2.5vw;
+    opacity: 0.5;
+  }
+  .project4head {
+    grid-area: project4;
+    background-color: var(--grcolour5);
+    color: black;
+    font-size: 2.5vw;
+    opacity: 0.5;
+  }
+  .project5head {
+    grid-area: project5;
+    background-color: var(--grcolour6);
+    color: black;
+    font-size: 2.5vw;
+    opacity: 0.5;
+  }
+  .projectimagecontainer {
+    grid-area: screenshot;
+    width: 100%;
+  }
+  .projectimage {
+    object-fit: contain;
+    width: 90vw;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .projecttext {
+    grid-area: projecttext;
+  }
+  .projectfooter {
+    grid-area: footer;
   }
 }
