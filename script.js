@@ -89,11 +89,11 @@ function navBarClick() {
 /* initialise hover and click functionality for project buttons */
 for (i=0; i < projectButton.length; i++) {
     projectButton[i].addEventListener("mouseenter", projectButtonMouseEnter);
-    projectButton[i].addEventListener("click", projectButtonClick); 
+    projectButton[i].addEventListener("click", projectButtonMouseEnter); 
 }
 /* project button hover function */
 function projectButtonMouseEnter() {
-    /* exits out of function if project that's already displayed is hovered over */
+    /* exits out of function if project that's already displayed is hovered over or clciked on */
     if (previousProjectID == "" && this.id == "project1" || previousProjectID == this.id){
         console.log("exit func")
         return;
@@ -110,7 +110,7 @@ function projectButtonMouseEnter() {
         document.getElementById(String(previousProjectID + "text")).classList.toggle("hidden");
         document.getElementById(previousProjectID).style.opacity = 0.5;
     }
-    /* shows project mouse is hovering over */
+    /* shows project mouse is hovering over or clicked on */
     console.log("mouse enter" + this.id);
     document.getElementById(String(this.id + "img")).classList.toggle("hidden");
     document.getElementById(String(this.id + "text")).classList.toggle("hidden");
