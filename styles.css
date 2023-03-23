@@ -52,6 +52,7 @@ html {
 }
 .bodytestaboutme[data-navbar="true"] {
   background-color: var(--grcolour2);
+  padding-bottom: 10%;
 }
 .bodytestwhywebdev[data-navbar="true"] {
   background-color: var(--grcolour3);
@@ -413,11 +414,11 @@ height: calc(5*var(--grheight));
   grid-auto-columns: 1fr;
   gap: 20px;
   grid-template-areas: 
-  'header header . .'
-  'text . image image'
-  'text . image image'
-  'text . image image'
-  'text . image image';
+  'header header image image image'
+  'text text image image image'
+  'text text image image image'
+  'text text image image image'
+  'text text image image image';
   background-color: var(--grcolour2);
 }
 .abouttext {
@@ -475,20 +476,16 @@ height: calc(5*var(--grheight));
   display: grid;
   grid-template-areas: 
   'header header . .'
-  '. screenshot screenshot screenshot'
-  'project1 screenshot screenshot screenshot'
-  '. screenshot screenshot screenshot'
-  'project2 screenshot screenshot screenshot'
-  '. screenshot screenshot screenshot'
-  'project3 screenshot screenshot screenshot'
-  '. screenshot screenshot screenshot'
-  'project4 screenshot screenshot screenshot'
-  '. screenshot screenshot screenshot'
-  'project5 screenshot screenshot screenshot'
-  '. screenshot screenshot screenshot'
+  '. . . .'
+  'project1 . screenshot screenshot'
+  '. . screenshot screenshot'
+  'project2 . screenshot screenshot'
+  '. . screenshot screenshot'
+  'project3 . screenshot screenshot'
+  '. . screenshot screenshot'
+  'project4 . screenshot screenshot'
   '. projecttext projecttext projecttext'
-  '. projecttext projecttext projecttext'
-  '. . footer footer'
+  'project5 projecttext projecttext projecttext'  
   ;
   grid-auto-rows: 6vh;
   grid-auto-columns: 22vw;
@@ -538,14 +535,17 @@ height: calc(5*var(--grheight));
 }
 .projectimagecontainer {
   grid-area: screenshot;
-  width: 100%;
+  width: 80%;
+  height: 90%;
   border: solid;
+  cursor: pointer;
 }
 .projectimage {
   object-fit: contain;
   width: 90vw;
   max-width: 100%;
   max-height: 100%;
+  cursor: pointer;
 }
 .projecttext {
   grid-area: projecttext;
