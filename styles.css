@@ -14,6 +14,9 @@
     margin: 0px;
     cursor: default;
   }
+a {
+  cursor: pointer;
+}
 .maintext {
     font-size: 1.5vw;
     color: black;
@@ -398,9 +401,14 @@ height: calc(5*var(--grheight));
   width: 100vw;
   height: 100vh; 
   background-color: var(--grcolour1);
-  padding-top: 12vh;
+  padding-top: 13vh;
   padding-left: 1vw;
   padding-right: 1vw;
+  justify-content: center;
+}
+.listofthree {
+  display: block;
+  text-align: center;
 }
 
 #aboutmecontent[data-visible="true"] {
