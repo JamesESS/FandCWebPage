@@ -461,6 +461,7 @@ height: calc(5*var(--grheight));
   'maintext . subtext'
   ;
   background-color: var(--grcolour3);
+  margin-bottom: 18%;
 }
 .whyweb0 {
   grid-area: header1;
@@ -500,6 +501,7 @@ height: calc(5*var(--grheight));
   gap: 20px;
   justify-content: center;
   background-color: var(--grcolour4);
+  margin-bottom: 15%;
 }
 
 .project0 {
@@ -627,6 +629,7 @@ input[type=number] {
     'image'
     ;
     background-color: var(--grcolour2);
+    margin-bottom: 18%;
   }
   .aboutmeheader {
     grid-area: header;
@@ -655,7 +658,7 @@ input[type=number] {
   #whywebdevcontent[data-visible="true"] {
     display: grid;
     width: 100vw;
-    height: 100vh; 
+    height: 300vh; 
     padding-top: 12vh; 
     padding-left: 1vw;
     padding-right: 1vw;
@@ -667,6 +670,7 @@ input[type=number] {
     '. subtext .'
     ;
     background-color: var(--grcolour3);
+    margin-bottom: 50%;
   }
   .whyweb0 {
     grid-area: header1;
@@ -684,7 +688,7 @@ input[type=number] {
   /* project page styling */
   #projectscontent[data-visible="true"] {
     width: 100vw;
-    height: 100vh; 
+    height: fit-content; 
     padding-top: 12vh;
     padding-left: 1vw;
     padding-right: 1vw;    
@@ -705,10 +709,12 @@ input[type=number] {
     gap: 20px;
     justify-content: center;
     background-color: var(--grcolour4);
+    padding-bottom: 150%;
   }
   
   .project0 {
     grid-area: header;
+    
   }
   
   .project1head {
@@ -717,6 +723,7 @@ input[type=number] {
     color: black;
     font-size: 2.5vw;
     opacity: 1;
+    position: sticky;
   }
   .project2head {
     grid-area: project2;
@@ -724,6 +731,7 @@ input[type=number] {
     color: black;
     font-size: 2.5vw;
     opacity: 0.5;
+    position: sticky;
   }
   .project3head {
     grid-area: project3;
@@ -731,6 +739,7 @@ input[type=number] {
     color: white;
     font-size: 2.5vw;
     opacity: 0.5;
+    position: sticky;
   }
   .project4head {
     grid-area: project4;
@@ -738,6 +747,7 @@ input[type=number] {
     color: black;
     font-size: 2.5vw;
     opacity: 0.5;
+    position: sticky;
   }
   .project5head {
     grid-area: project5;
@@ -745,6 +755,7 @@ input[type=number] {
     color: black;
     font-size: 2.5vw;
     opacity: 0.5;
+    position: sticky;
   }
   .projectimagecontainer {
     grid-area: screenshot;
