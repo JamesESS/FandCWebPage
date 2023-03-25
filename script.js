@@ -9,7 +9,7 @@ const contactForm = document.getElementsByClassName("form");
 const mobileCheck = document.getElementById("mobilecheck");
 const myAge = document.getElementById("myage");
 
-let age = Math.floor((new Date()- new Date(1993,03,24)) / 31536000000);   //turn my birthday in to milliseconds
+let age = Math.floor((new Date()- new Date(1993,02,24)) / 31536000000);   //turn my birthday in to milliseconds and compare to today in milliseconds. new Date() month starts at 0!!
 myAge.innerText = age;
 /* variable to track state of different buttons */
 let previousNavID = "";
