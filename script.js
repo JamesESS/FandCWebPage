@@ -14,6 +14,7 @@ myAge.innerText = age;
 /* variable to track state of different buttons */
 let previousNavID = "";
 let previousProjectID = "";
+let splashAnimation = true;
 
 /* variables needed for contact form and contact form event listener */
 let contactObject = {
@@ -61,6 +62,7 @@ function splashMouseEnter() {
    /*  if (mobileDeviceStatus){
         return;
     } */
+    splashAnimation = false;
     mouseHover = true;
     let splashNavHover = this.firstElementChild;
     if (getComputedStyle(splashNavHover).display == "none" && !mobileDeviceStatus){
@@ -68,6 +70,7 @@ function splashMouseEnter() {
     }
 }
 function splashMouseLeave() {
+    splashAnimation = true;
     mouseHover = false;
     let splashNavHover = this.firstElementChild;
     console.log(getComputedStyle(splashNavHover).display);
@@ -164,6 +167,8 @@ function contactMeSubmit(Event) {
 }
 /* Shift splash page between preset configurations on three second intervals*/
 setInterval((event) => {
-    let random = Math.floor(Math.random() * 5);
-    splashContainer.dataset.positioning = random; //asign preset configuration
+    if (splashAnimation) {
+        let random = Math.floor(Math.random() * 5);
+        splashContainer.dataset.positioning = random; //asign preset configuration
+    }
   }, 3500);
