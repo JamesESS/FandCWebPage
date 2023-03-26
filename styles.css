@@ -16,6 +16,13 @@
   }
 a {
   cursor: pointer;
+  text-decoration: underline;
+}
+a:visited {
+  color: black;
+}
+svg {
+  cursor: pointer;
 }
 .maintext {
     font-size: 1.5vw;
@@ -633,9 +640,13 @@ input[type=number] {
   }
   .aboutmeheader {
     grid-area: header;
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
   .abouttext {
     grid-area: text;
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
   #meslideshow {
     grid-area: image;
@@ -658,7 +669,7 @@ input[type=number] {
   #whywebdevcontent[data-visible="true"] {
     display: grid;
     width: 100vw;
-    height: 300vh; 
+    /* height: 300vh;  */
     padding-top: 12vh; 
     padding-left: 1vw;
     padding-right: 1vw;
@@ -666,24 +677,43 @@ input[type=number] {
     grid-template: 
     '. header1 .' 
     '. maintext .'
+    /* '. maintext .' */
     '. header2 .'
     '. subtext .'
+    /* '. subtext .' */
     ;
+    grid-template-rows: max-content max-content max-content max-content;
     background-color: var(--grcolour3);
     margin-bottom: 50%;
   }
   .whyweb0 {
     grid-area: header1;
-    text-align: center;
+    /* text-align: center; */
+    height: fit-content;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 3vh;
   }
   .whyfac {
     grid-area: header2;
+    height: fit-content;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 3vh;
   }
   .whyweb1 {
     grid-area: maintext;
+    height: fit-content;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 6vh;
   }
   .whyweb2 {
     grid-area: subtext;
+    height: fit-content;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 6vh;
   }
   /* project page styling */
   #projectscontent[data-visible="true"] {
@@ -770,6 +800,8 @@ input[type=number] {
   }
   .projecttext {
     grid-area: projecttext;
+    /* padding-left: 5vw; */
+    padding-right: 5vw;
   }
   .projectfooter {
     grid-area: footer;
@@ -806,12 +838,15 @@ input[type=number] {
   }
   #linkedcontact {
     grid-area: linkedin;
+    height: fit-content;
   }
   #githubcontact {
     grid-area: github;
+    height: fit-content;
   }
   #instacontact {
     grid-area: insta;
+    height: fit-content;
   }
   .contactfoot {
     padding-top: 40vh;
